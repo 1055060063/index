@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/ct.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/animate.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/swiper-4.2.0.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+    <style>
+    	body{margin: 0;}
+    	.icon-left{background:url(../../icon/left.png)no-repeat;background-size: 100% 100%; width:25px; height:25px;}
+    	.aui-title{font-size:16px;}
+    	.info_txt{background: #fff;width: 100%;float: left;}
+		.txt_t {width: 100%;float: left;padding: 0.3125rem 0.625rem;}
+		.txt_t p{font-size: 1rem;overflow: hidden;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;height: 2.5rem;color: #333;}
+		.txt_c {width: 100%;float: left;padding: 0.3125rem 0.625rem;}
+		.txt_c p{width:50%;float: left;}
+		.txt_c p.txt{color: #f00;}
+		.txt_c p.txt b{font-weight: normal;font-size: 0.75rem;}
+		.txt_c p.txtr{text-align: right;}
+		.txt_c p.txtr b{font-weight: normal;}
+		.info_product{width: 100%;float: left;background: #fff;margin-top: 0.625rem;}
+		.info_product ul li {text-align: center;float: left;width: 50%;height: 2.5rem;line-height: 2.5rem;}
+		.info_product ul li.info_curr{border-bottom: 2px solid #198fee;}
+    </style>
+	</head>
+	<body>
+	<!--<header class="aui-bar aui-bar-nav" style="padding-top:2.5rem;width: 100%;background:#f6f6f6;">
+		  <p class="icon-left" style="float:left;margin:-5px 0 0 0;"></p>
+	      <div class="aui-title" style="text-align: center;color:#333;padding-bottom: 10px;">商品详情</div>
+  	</header>-->
+
+  	<div id="wrap">
+  		<div id="main">
+
+  			<div class="box_Img">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="../../image/info_img1.jpg" alt=""></div>
+                        <div class="swiper-slide">2</div>
+                        <div class="swiper-slide">3</div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+  			<div class="info_txt">
+               <div class="txt_t">
+                  <p>洛诗琳 2018年春装新款女装撞色娃娃领印花连衣裙子蓝色XL</p>
+               </div>
+               <div class="txt_c">
+                 <p class="fs16 txt"><b class="fs14">￥</b>349</p>
+                 <p class="txtr">库存<b class="num">22</b></p>
+               </div>
+               <div class="txt_c">
+                 <p>商品编号:388342153</p>
+                 <p class="txtr">月销<b class="sales">202</b>笔</p>
+               </div>
+            </div>
+            <div class="info_product" id="info_product">
+                <ul>
+                  <li class="info_curr" onclick="infoClassBtn(this)"><b></b>商品详情</li>
+                  <li class="" onclick="infoClassBtn(this)">用户评价</li>
+                </ul>
+            </div>
+
+  		</div>
+  	</div>
+	</body>
+</html>
+<script src="../../script/api.js"></script>
+<script src="../../script/jquery.1.4.2-min.js"></script>
+<script src="../../script/swiper-4.2.0.min.js"></script>
+<script>
+var mySwiper = new Swiper('.swiper-container',{
+  pagination: {
+    el: '.swiper-pagination',
+    dynamicBullets: true,
+    dynamicMainBullets: 2
+  },
+})
+</script>
