@@ -62,8 +62,8 @@
             </div>
             <div class="info_product" id="info_product">
                 <ul>
-                  <li class="info_curr" onclick="infoClassBtn(this)"><b></b>商品详情</li>
-                  <li class="" onclick="infoClassBtn(this)">用户评价</li>
+                  <li class="info_curr tabList_infoBtn" onclick="infoClassBtn(this)"><b></b>商品详情</li>
+                  <li class="tabList_infoBtn" onclick="infoClassUser(this)">用户评价</li>
                 </ul>
             </div>
 
@@ -75,6 +75,36 @@
 <script src="../../script/jquery.1.4.2-min.js"></script>
 <script src="../../script/swiper-4.2.0.min.js"></script>
 <script>
+apiready = function () {
+	var info_product = $api.byId('info_product');
+			info_productList = $api.domAll(info_product, 'tabList_infoBtn');
+			var frames = [];
+
+		for(var i = 0; i<info_productList.length;i++){
+				frames.push({
+	          name: 'info_frame' + i,
+	          url: './info_frame.html',
+	      })
+		}
+
+
+ api.openFrameGroup ({
+     name: 'info',
+     background: '#fff',
+     scrollEnabled: true,
+     rect: {
+          x: 0,
+          y: 0,
+          w: 'auto',
+          h: 'auto'
+     },
+     index: 1,
+     frames:frames
+ }, function(ret, err){
+
+ });
+
+}
 var mySwiper = new Swiper('.swiper-container',{
   pagination: {
     el: '.swiper-pagination',
