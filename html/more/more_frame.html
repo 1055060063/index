@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/ct.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+    <style>
+    	#main{position: absolute;top: 0;bottom: 0;width: 100%;overflow: hidden;float:left;}
+        .topbar .icon-left{background:url(../../icon/left.png)no-repeat;background-size: 100% 100%; width:25px; height:25px;}
+    	.search-box {border: 1px solid #9D9E9D;border-radius: 7px;position: relative;top: 0px;right: 0;height: 35px;margin-left: 15px;}
+    	.search-box input {width: 100%;height: 100%;padding-left: 10px;color: #9D9E9D;font-size: 13px;}
+    	.search-box input::-webkit-input-placeholder {color: #9D9E9D;line-height: 13px;}
+    	.icon-msg{background:url(../../icon/icon_msg.png)no-repeat;background-size: 100% 100%; width:48px; height:48px;position: relative;top: 1px;right: 0;}
+    	.more_left{font-size: 90%;background-color: #f6f6f6;line-height: 40px;width: 25%;float: left;overflow-y: auto;overflow-x: hidden;height: 100%}
+  		.more_left li{text-align: center;height:3.125rem;line-height:3.125rem;background: #F6F6F9;border-left:2px solid #fff;}
+  		.more_left li.cur{background: #fff;color: #198fee;border-left:2px solid #198fee}
+  		.more_right{float: left;font-size: 90%;height: 100%;overflow-y: auto;overflow-x: hidden;width: 75%;}
+  		.more_right .cont1{float: left;}
+  		.more_right .title{font-size: 1rem;text-align: center;margin-top: 1.25rem;}
+  		.more_nav{float: left;}
+  		.more_nav li{font-size: 0.875rem;margin-top: 0.625rem;width: 33.33%;float: left;text-align: center;}
+  		.more_nav li span{width: 100%;color:#333;}
+  		.more_nav li span:nth-child(even){overflow: hidden;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;height: 1.5rem;}
+  		.more_nav .more_img{background: url(../../image/hot9.png)no-repeat;background-size: 100% 100%;width: 5rem;height: 5rem;}
+    </style>
+</head>
+<body>
+  <!-- <header>
+      <div class="left" onclick="api.closeWin();">返回</div>
+      <div class="txt" style="text-align:center;">分类</div>
+  </header> -->
+	<div id="wrap">
+		<div id="main">
+			<div class="more_left">
+			    <ul>
+			      <li class="cur">第一个</li>
+			      <li>第二个</li>
+			    </ul>
+			</div>
+<div class="more_right">
+    <div class="cont1">
+        <p class="title">————  热门商品  ————</p>
+        <div class="more_nav">
+          <ul>
+            <li>
+              <a href="./info/info1.html">
+                <span class="more_img"></span>
+                <span>鞋子</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+    <div class="cont1" style="display:none;">
+        <p class="title">————  热门商品  ————</p>
+        <div class="more_nav">
+          <ul>
+            <li>
+              <a href="javascript:;">
+                <span class="more_img"></span>
+                <span>皮鞋</span>
+              </a>
+          </ul>
+        </div>
+    </div>
+</div>
+    	</div>
+	</div>
+
+</body>
+</html>
+<script src="../../script/api.js"></script>
+<script src="../../script/jquery.1.4.2-min.js"></script>
+<script>
+	$(function(){
+  $('.more_left li').click(function() {
+         var i = $(this).index();//下标第一种写法
+         //var i = $('tit').index(this);//下标第二种写法
+         $(this).addClass('cur').siblings().removeClass('cur');
+         $('.more_right .cont1').eq(i).show().siblings().hide();
+     });
+})
+</script>

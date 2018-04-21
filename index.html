@@ -16,7 +16,6 @@
       	.search-box input {width: 100%;height: 100%;padding-left: 10px;color: #9D9E9D;font-size: 13px;}
       	.search-box input::-webkit-input-placeholder {color: #9D9E9D;line-height: 13px;}
       	.topbar .icon-msg{background:url(./icon/icon_msg.png)no-repeat;background-size: 100% 100%; width:48px; height:48px;position: relative;top: 1px;right: 0;}
-      	.topbar .icon-left{background:url(./icon/left.png)no-repeat;background-size: 100% 100%; width:25px; height:25px;}
         #footer{  background-color: #f2f2f2; }
         #footer ul li{  padding-top: 36px; padding-bottom: 4px; background: url() no-repeat center 2px; background-size: auto 30px; text-align: center; }
         #footer ul li.active{ color: #198fee; }
@@ -38,7 +37,6 @@
   <header id="header">
       <div id="tab1">
         <div class="topbar search flex-box flex-h-ce relative">
-          <span class="icon-left"></span>
             <div class="flex-box flex-1 flex-h-ce search-box">
             <input name="home-input" class="flex-1" type="text" placeholder="搜索全部商品" />
             <span class="icon-search"></span>
@@ -50,10 +48,10 @@
     <div id="main"></div>
     <div id="footer" class="border-t">
         <ul class="flex-wrap" >
-            <li onclick="randomSwitchBtn(0);" class="flex-con active" >首页</li>
-            <li onclick="randomSwitchBtn(1);" class="flex-con" >分类</li>
-            <li onclick="randomSwitchBtn(2);" class="flex-con" >购物车</li>
-            <li onclick="randomSwitchBtn(3);" class="flex-con" >我的</li>
+            <li onclick="randomSwitchBtn();" tapmode class="flex-con active">首页</li>
+            <li onclick="randomMoreBtn();" tapmode class="flex-con">分类</li>
+            <li onclick="randomCartBtn();" tapmode class="flex-con">购物车</li>
+            <li onclick="randomMyBtn();" tapmode class="flex-con">我的</li>
         </ul>
     </div>
 </div>
@@ -76,8 +74,8 @@
       var frames = [];
       for(var i=0;i<TabsList.length;i++){
           frames.push({
-              name: 'frame' + i,
-              url: './html/frame0.html',
+              name: 'index' + i,
+              url: './html/home/index.html',
           })
       }
 
@@ -96,15 +94,9 @@
        }, function(ret, err){
             fnTabsList(ret.index);
        });
-      var TabsList;
-      function randomSwitchBtn(idnex){
-        api.setFrameGroupIndex({
-            name: 'index',
-            index: 0,
-            scroll: true
-        });
 
-      }
+      var TabsList;
+
       function fnTabsList(index){
         for (var i=0; i<TabsList.length;i++){
             if(index == i){
@@ -115,8 +107,38 @@
             }
         }
       }
-
     }
+  function randomMoreBtn(){
+    api.openWin({
+        name: 'more',
+        url: './html/more/more.html',
+        pageParam: {
+            name: 'test'
+        }
+    });
+
+  }
+  function randomCartBtn(){
+    api.openWin({
+        name: 'more',
+        url: './html/cart/cart.html',
+        pageParam: {
+            name: 'test'
+        }
+    });
+
+  }
+  function randomMyBtn(){
+    api.openWin({
+        name: 'more',
+        url: './html/my/my.html',
+        pageParam: {
+            name: 'test'
+        }
+    });
+
+  }
+
     // function randomSwitchBtn(){
     //     api.openWin({
     //         name: 'frame',
@@ -125,6 +147,6 @@
     //             name: 'test'
     //         }
     //     });
-    //
+    
     // }
 </script>
